@@ -18,4 +18,4 @@ The denominator is the complete cohort size, not the number of users who produce
 
 This is bounded, in-memory descriptive analysis. It does not estimate survival probabilities, infer missing events, handle account merges or adjust for acquisition-channel differences. Results assume the supplied events are complete through the cutoff. A more recent signup cohort remains censored until its signup month closes, preventing premature comparison with complete cohorts.
 
-Local R execution was unavailable on the authoring host. The repository includes a native R CI job and 17 assertions; successful execution must be confirmed from that job before claiming validation.
+All 17 native R assertions and the documented fixture command passed in a local Linux container. The repository also includes a native R CI job; its workflow log records remote validation separately.
