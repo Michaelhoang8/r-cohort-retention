@@ -1,0 +1,14 @@
+name: Test
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install base R
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends r-base-core
+      - run: Rscript tests/run.R
+      - run: Rscript cohort.R --help
+      - run: Rscript cohort.R --users fixtures/users.csv --events fixtures/events.csv --as-of 2026-04-15 --months 3
